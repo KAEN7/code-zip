@@ -7,3 +7,5 @@
 - Loading  
   -  Loading 스피너 컴포넌트
 - pagination  
+- theme.js
+  - 코드스플리팅 시킨 css 코드 
