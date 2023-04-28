@@ -25,9 +25,11 @@ const theme = {
 
 // color
 export const color = {
-	white: "#ffffe7",
-	gray: "#3c3c3d",
-	point: "#F13A3A",
+	white: "#F8F8F8",
+	black: "#141414",
+	gray: "#D1D1D1",
+	point: "#5754CE",
+	subPoint: "#E680B0",
 };
 
 // flex 디자인
@@ -48,12 +50,30 @@ export const pageSetting = css`
 	align-items: center;
 	flex-direction: column;
 	width: 100vw;
-	height: 100vh;
 	box-sizing: border-box;
 	padding: 3rem;
 	overflow-y: auto;
 	::-webkit-scrollbar {
 		display: none;
+	}
+`;
+
+export const customScrollbar = css`
+	overflow-y: auto;
+	overflow-x: hidden;
+
+	&::-webkit-scrollbar {
+		width: 8px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		height: 30%;
+		background: ${color.gray};
+		border-radius: 8px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: none;
 	}
 `;
 
@@ -65,7 +85,7 @@ export const overflowY = css`
 `;
 
 export const fadeIn = css`
-	animation: fade-in 3s;
+	animation: fade-in 2s;
 
 	@keyframes fade-in {
 		from {
@@ -77,4 +97,26 @@ export const fadeIn = css`
 	}
 `;
 
-export default theme;
+export const rainbowText = css`
+	white-space: nowrap;
+
+	background: -webkit-linear-gradient(92deg, #95d7e3, #eb76ff);
+	background-size: 100vw 100vw;
+
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: textAnimate 5s linear infinite alternate;
+
+	@keyframes textAnimate {
+		from {
+			filter: hue-rotate(0deg);
+			background-position-x: 0%;
+		}
+		to {
+			filter: hue-rotate(360deg);
+			background-position-x: 600vw;
+		}
+	}
+`;
+
+export type Theme = typeof theme;
