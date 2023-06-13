@@ -13,3 +13,5 @@
   - toast popup 
 - TTS
   -  text를 음성으로 읽어주는 코드
+-  useSpeechRecognition
+  -  음성을 텍스트로 변환하는 코드
